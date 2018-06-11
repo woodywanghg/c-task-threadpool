@@ -1,5 +1,5 @@
 /*
- * Copyright (C) feinno.com wanghonggang 2010-5-13
+ * Copyright (C) wanghonggang 2010-5-13
  */
 
 #ifndef _TASK_H_
