@@ -106,16 +106,16 @@ int get_pool_task_size(struct task_thread_pool_t* task_thread_pool)
 	return size;
 }
 
-__u64 get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool)
+int get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool)
 {
 	int i = 0;
-        __u64 size = 0;
-        for(i = 0; i < task_thread_pool->size; i++)
-        {
-                size += get_passed_tasks(task_thread_pool->threads[i]);
-        }
+	int size = 0;
+	for(i = 0; i < task_thread_pool->size; i++)
+	{
+			size += get_passed_tasks(task_thread_pool->threads[i]);
+	}
 
-        return size;
+	return size;
 }
 
 void pool_remove_task_id(struct task_thread_pool_t* task_thread_pool, int task_id)

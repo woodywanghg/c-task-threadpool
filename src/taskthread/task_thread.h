@@ -9,8 +9,6 @@
 #include "queue.h"
 #include <pthread.h>
 #include "task.h"
-#include <linux/types.h>
-
 
 struct task_thread_t
 {
@@ -18,7 +16,7 @@ struct task_thread_t
 	pthread_t tid;
     pthread_mutex_t lock;
 	struct queue_t* queue;	
-	__u64   passed_tasks;
+	int passed_tasks;
 };
 
 struct task_thread_t* create_task_thread();
@@ -26,8 +24,8 @@ void destroy_task_thread(struct task_thread_t* task_thread);
 int enqueue_task_t(struct task_thread_t* task_thread, struct task_t* task);
 void pause_thread(struct task_thread_t* task_thread);
 void resume_thread(struct task_thread_t* task_thread);
-inline int get_task_size(struct task_thread_t* task_thread);
-inline __u64 get_passed_tasks(struct task_thread_t* task_thread);
+int get_task_size(struct task_thread_t* task_thread);
+int get_passed_tasks(struct task_thread_t* task_thread);
 void remove_task_id(struct task_thread_t* task_thread, int task_id);
 void remove_task_all(struct task_thread_t* task_thread);
 

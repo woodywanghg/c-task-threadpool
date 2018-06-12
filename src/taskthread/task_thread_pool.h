@@ -6,7 +6,6 @@
 #define _TASK_THREAD_POOL_H_
 
 #include "task.h"
-#include <linux/types.h>
 
 struct task_thread_pool_t
 {
@@ -22,7 +21,7 @@ int enqueue_task_index(struct task_thread_pool_t* task_thread_pool, struct task_
 int pause_task_thread_pool(struct task_thread_pool_t* task_thread_pool);
 int resume_task_thread_pool(struct task_thread_pool_t* task_thread_pool);
 int get_pool_task_size(struct task_thread_pool_t* task_thread_pool);
-__u64 get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool);
+int get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool);
 void pool_remove_task_id(struct task_thread_pool_t* task_thread_pool, int task_id);
 void pool_remove_task_id_index(struct task_thread_pool_t* task_thread_pool, int task_id, int index);
 void pool_remove_task_all(struct task_thread_pool_t* task_thread_pool);

@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <pthread.h>
 #include "task.h"
+#include <sys/select.h>
 
 static void* run(void* para);
 static inline void task_proxy(struct task_t* task);
@@ -164,10 +165,10 @@ int get_task_size(struct task_thread_t* task_thread)
 	return size;
 }
 
-__u64 get_passed_tasks(struct task_thread_t* task_thread)
+int get_passed_tasks(struct task_thread_t* task_thread)
 {
 	pthread_mutex_lock(&task_thread->lock);
-        __u64 size = task_thread->passed_tasks;
+	int size = task_thread->passed_tasks;
 	pthread_mutex_unlock(&task_thread->lock);
 	return size;
 }
