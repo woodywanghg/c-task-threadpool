@@ -22,3 +22,14 @@
 * 6. int get_pool_task_size(struct task_thread_pool_t* task_thread_pool); *Get thread number*
 * 7. int get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool); *Get tasks number*
 
+## How to build & install?
+```{r, engine='bash', build}
+
+Step 0.  c-task-threadpool dir
+
+Step 1.  cd build
+Step 2.  cmake .
+Step 3.  make
+Step 4.  make install
+```
+
