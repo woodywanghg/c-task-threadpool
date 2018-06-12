@@ -20,5 +20,5 @@
      *  int resume_task_thread_pool(struct task_thread_pool_t* task_thread_pool);
 
 * 6. int get_pool_task_size(struct task_thread_pool_t* task_thread_pool); *Get thread number*
-* 7. __u64 get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool); *Get tasks number*
+* 7. int get_pool_passed_tasks(struct task_thread_pool_t* task_thread_pool); *Get tasks number*
 
